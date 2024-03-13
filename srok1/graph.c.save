@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+typedef struct Edge{
+
+	
+
+}Edge;
+
+typedef struct Node{
+
+	int value;
+	Edge e[];
+
+}Node;
+
+typedef struct Graph{
+
+}Graph;
+
+int main()
+{
+
+
+
+	return 0;
+}

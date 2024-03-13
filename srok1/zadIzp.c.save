@@ -1,0 +1,95 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node{
+	int value;
+	int left;
+	int right;
+	int top;
+	int bot;
+}
+
+struct Node* createNode(int value)
+{
+	struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
+	if(newNode == NULL)
+	{
+		printf("Error allocating mammory!");
+		exit(1);
+	}
+	newNode->value = value;
+	newNode->right = NULL;
+	newNode->left = NULL;
+
+	return newNode;
+}
+
+struct Node* push(struct Node* cur, int value)
+{
+	if(cur == NULL)
+	{
+		return createNode(value);
+	}
+
+	if(cur->value >= value)
+	{
+		cur->left = push(cur->left, value);
+	}
+	else
+	{
+		if(cur->value < value)
+		{
+			cur->right = push(cur->right, value);
+		}
+	}
+
+	return cur;
+}
+
+
+int depth (struct Node* node)
+{
+	if(node == NULL)
+	{
+		return 0;
+	}
+	return (1 + ((depth(node->left) > depth(node->right)) ? depth(node->left):depth(node->right)));
+}
+
+void printTree(struct Node* cur)
+{
+	if(cur == NULL)
+	{
+		free(cur);
+		return;
+	}
+
+	printf("%d ", cur->value);
+	printTree(cur->left);
+	printTree(cur->right);
+}
+
+void fill (int mat*, int i, int j, struct node*)
+{
+	
+
+}
+
+int main()
+{
+	int mat [3][5] =
+	{
+	{'0', '0', '0', '1', '1'},
+	{'1', '0', '0', '0', '0'},
+	{'1', '0', '0', '1', '0'}
+	};
+
+	struct Node* TreeRoot1 = NULL;
+
+	fill(mat, 
+
+	printTree(TreeRoot1);;
+	printf("Depth: %d\n", depth(TreeRoot1));
+
+  return 0;
+}
