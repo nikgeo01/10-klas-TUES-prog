@@ -1,4 +1,3 @@
-# 10-klas-TUES-prog
-# 10-klas-TUES-prog
-# 10-klas-TUES-prog
-# 10-klas-TUES-prog
+# OOP
+#10th grade - C++
+#11th grade - Java
